@@ -17,7 +17,14 @@ dict = {
     "son's weight": 25,
 }
 
+dict = {
+    "son's name": "Lucas",
+    "son's eyes": "green",
+    "son's height": 32,
+    "son's weight": 25,
+}
 
+dict["son's height"] = 34
 # 3) Given a Python dictionary, Change Brad’s salary to 8500
 
 sampleDict = {
