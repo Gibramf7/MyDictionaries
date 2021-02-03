@@ -34,6 +34,10 @@ sampleDict = {
 }
 
 
+sampleDict["emp3"]["salary"] = 8500
+print(sampleDict)
+
+
 # 4 )Given the dictionary below, add a new key - 'work' with the values shown below:
 #       "work": ["Apology", "Phaedo", "Republic", "Symposium"]
 
