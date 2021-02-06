@@ -1,28 +1,38 @@
-file = open("text.txt", "r")
+import string
 
-text = file.read()
-text = text.replace("\n", "")
+dic = {}
 
-word_list = text.split(" ")
+textFile = open("Text.txt", "r")
 
-for word in word_list:
-    word_count = ""
-    for x in range(len(word)):
-        word_count += word[x]
-    word_list[word_list.index(word)] = word_count
+# Iterate over each line in the file
 
-while "" in word_list:
-    word_list.remove("")
+for line in textFile.readlines():
 
-word_dict = ()
-for word in word_list:
-    if word in word_dict:
-        word_dict[word] += 1
-    else:
-        word_dict[word] = 1
+    tex = line
 
-print("World\tFrequency")
-for word in word_dict:
-    print(format(word), "\t\t", format(word_dict[word]))
+    tex = tex.lower()
 
-file.close()
+    tex = tex.translate(
+        str.maketrans("", "", string.punctuation)
+    )  # removes every punctuation
+
+    # section 2
+
+    new = tex.split()
+
+    for word in new:
+
+        if word not in dic.keys():
+
+            dic[word] = 1
+
+        else:
+
+            dic[word] = dic[word] + 1
+
+for word in sorted(dic):
+
+    print(word, dic[word], "\n")
+
+
+textFile.close()
