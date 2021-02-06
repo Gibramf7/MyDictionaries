@@ -1,21 +1,28 @@
-def main():
-    text = open("text.txt")
-    dict = ()
-    textlist = []
-    line = text.readline()
+file = open("text.txt", "r")
 
-    word_counts = []
+text = file.read()
+text = text.replace("\n", "")
 
-    for word in line.split():
-        if word in word_counts():
-            word_counts[word] += 1
-        else:
-            word_counts[word] = 1
+word_list = text.split(" ")
 
-        print(dict)
+for word in word_list:
+    word_count = ""
+    for x in range(len(word)):
+        word_count += word[x]
+    word_list[word_list.index(word)] = word_count
 
-    for word.count in sorted(word_counts.items()):
-        print(dict)
+while "" in word_list:
+    word_list.remove("")
 
+word_dict = ()
+for word in word_list:
+    if word in word_dict:
+        word_dict[word] += 1
+    else:
+        word_dict[word] = 1
 
-main()
+print("World\tFrequency")
+for word in word_dict:
+    print(format(word), "\t\t", format(word_dict[word]))
+
+file.close()
