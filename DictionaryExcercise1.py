@@ -1,38 +1,29 @@
 import string
 
-dic = {}
+dict = {}
 
-textFile = open("Text.txt", "r")
+# Open file
+textFile = open("text.txt", "r")
 
-# Iterate over each line in the file
-
+# Read lines in file
 for line in textFile.readlines():
+    text = line
+    text = text.lower()
 
-    tex = line
+# Remove empty punctaution strings
+    text = text.translate(str.maketrans("", "", string.punctuation))
 
-    tex = tex.lower()
-
-    tex = tex.translate(
-        str.maketrans("", "", string.punctuation)
-    )  # removes every punctuation
-
-    # section 2
-
-    new = tex.split()
-
+    new = text.split()
+# Output
     for word in new:
-
-        if word not in dic.keys():
-
-            dic[word] = 1
-
+        if word not in dict.keys():
+            dict[word] = 1
         else:
-
-            dic[word] = dic[word] + 1
-
-for word in sorted(dic):
-
-    print(word, dic[word], "\n")
+            dict[word] = dict[word] + 1
 
 
+for word in sorted(dict):
+    print(word, dict[word], "\n")
+
+# Close file
 textFile.close()
