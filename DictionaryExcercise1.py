@@ -3,10 +3,10 @@ import string
 dict = {}
 
 # Open file
-textFile = open("text.txt", "r")
+textfile = open("text.txt", "r")
 
 # Read lines in file
-for line in textFile.readlines():
+for line in textfile.readlines():
     text = line
     text = text.lower()
 
@@ -26,4 +26,4 @@ for word in sorted(dict):
     print(word, dict[word], "\n")
 
 # Close file
-textFile.close()
+textfile.close()
